@@ -26,7 +26,7 @@
   ],
   "route": {
     "rules": [
-      {"protocol": "dns", "outbound": "dns-out"},
+      {"protocol": "dns","action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
       {"protocol": "bittorrent", "outbound": "🎯 全球直连"},
       {"domain_suffix": ["steamserver.net", "steamcontent.com", "steamcdn-a.akamaihd.net"], "outbound": "🎯 全球直连"},
