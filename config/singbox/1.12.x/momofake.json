@@ -47,7 +47,7 @@
     "rules": [
       { "ip_is_private": true, "outbound": "🎯 全球直连" }
       {"domain_suffix": ["themoviedb.org", "tmdb.org"], "outbound": "🚀 默认代理"}
-      {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
+      {"action": "sniff", "sniffer": ["http", "tls", "dns"]},
       {"inbound": "dns-in", "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
       {"process_name": ["qbittorrent", "transmission-daemon", "aria2c", "wget", "curl", "DownloadService"], "outbound": "🎯 全球直连"},
