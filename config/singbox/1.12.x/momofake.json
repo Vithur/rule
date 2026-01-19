@@ -75,6 +75,7 @@
       {"rule_set": "geoip-cn", "outbound": "🎯 全球直连"}
       { "protocol": "bittorrent", "outbound": "🎯 全球直连" }
       { "ip_is_private": true, "outbound": "🎯 全球直连" }
+      {"domain_suffix": ["themoviedb.org", "tmdb.org"], "outbound": "🚀 默认代理"}
     ],
     "rule_set": [
       {"tag": "geosite-fakeipfilter", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json", "download_detour": "🎯 全球直连"},
