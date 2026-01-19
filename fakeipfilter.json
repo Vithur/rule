@@ -8,45 +8,37 @@
         "heartbeat.belkin.com"
       ],
       "domain_suffix": [
-        // === 游戏类：补齐《燕云十六声》及主流端游 ===
-        ".yysls.cn",           // 燕云十六声官网
-        ".yysls.netease.com",   // 燕云十六声业务
-        ".leihuo.com",          // 雷火工作室
-        ".netease.com",         // 网易通用
-        ".163.com",             // 网易通用
-        ".mihoyo.com",          // 米哈游
-        ".hoyoverse.com",       // 米哈游海外/通用
-        ".starrails.com",       // 崩铁
-        ".gcloudcs.com",        // 腾讯/网易常用游戏服务器
-        ".gcloudsdk.com",       // 游戏SDK
-        ".uu.163.com",          // UU加速器
-
-        // === 支付与安全类：防止Fake-IP导致环境校验失败 ===
-        ".alipay.com",          // 支付宝
-        ".alipayobjects.com",   // 支付宝静态资源
-        ".cmbchina.com",        // 招商银行
-        ".cmbimg.com",          // 招行资源
-        ".unionpay.com",        // 银联
-        ".unionpaysecure.com",  // 银联安全支付
-        ".tenpay.com",          // 微信支付后台
-
-        // === 系统服务类：防止推送延迟与同步错误 ===
-        ".push.apple.com",      // 苹果推送
-        ".time.apple.com",      // 苹果时间同步
-        ".time.windows.com",    // Windows时间同步
-        ".pool.ntp.org",        // 通用NTP池
-        ".snssdk.com",          // 字节跳动SDK
-        ".pstatp.com",          // 字节跳动资源
-
-        // === 常用工具与下载类 ===
-        ".sandai.net",          // 迅雷
-        ".n0808.com",           // 迅雷加速
-        ".oray.com",            // 向日葵/花生壳
+        ".yysls.cn",          
+        ".yysls.netease.com",   
+        ".leihuo.com", 
+        ".douyin.com",
+        ".netease.com",         
+        ".163.com",           
+        ".mihoyo.com",         
+        ".hoyoverse.com",     
+        ".starrails.com",    
+        ".gcloudcs.com",      
+        ".gcloudsdk.com", 
+        ".uu.163.com",  
+        ".alipay.com",        
+        ".alipayobjects.com",  
+        ".cmbchina.com",       
+        ".cmbimg.com",        
+        ".unionpay.com",        
+        ".unionpaysecure.com",
+        ".tenpay.com",        
+        ".push.apple.com",   
+        ".time.apple.com",    
+        ".time.windows.com", 
+        ".pool.ntp.org",      
+        ".snssdk.com",       
+        ".pstatp.com",       
+        ".sandai.net",    
+        ".n0808.com",         
+        ".oray.com",        
         ".orayimg.com",
-        ".xiaomi.com",          // 小米服务
+        ".xiaomi.com",       
         ".market.xiaomi.com",
-
-        // === 原有保留项（媒体/其他） ===
         ".music.163.com",
         ".kugou.com",
         ".joox.com",
@@ -56,7 +48,6 @@
         ".music.migu.cn"
       ],
       "domain_regex": [
-        // 仅保留必要正则，清理了冗余的 NTP 正则
         "^lp-.*\\.itunes\\.apple\\.com"
       ]
     }
