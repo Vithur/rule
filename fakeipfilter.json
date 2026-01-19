@@ -4,6 +4,10 @@
     {
       "domain": [
         "localhost",
+        "constant.yonyou.com", 
+        "netease.com", 
+        "163.com",
+        "douyin.com",
         "time-ios.apple.com",
         "time1.cloud.tencent.com",
         "music.163.com",
