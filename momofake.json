@@ -16,7 +16,7 @@
     ],
     "final": "foreign",
     "client_subnet": "223.5.5.0/24",
-    "strategy": "ipv4_only",
+    "strategy": "prefer_ipv4",
     "independent_cache": false,
     "reverse_mapping": false
   },
@@ -71,6 +71,7 @@
     "interface_name": "momo",
     "address": [
       "172.31.0.1/30"
+      "fdfe::1/126"
     ],
     "auto_route": false,
     "auto_redirect": false
