@@ -45,7 +45,13 @@
     "final": "🚀 默认代理",
     "auto_detect_interface": true
   },
-  "inbounds": [
+"inbounds": [
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "::",
+      "listen_port": 1053
+    },
     {
       "type": "tun",
       "tag": "tun-in",
@@ -58,8 +64,19 @@
     }
   ],
   "experimental": {
-    "cache_file": {"enabled": true, "path": "/etc/momo/run/cache.db", "store_fakeip": true},
-    "clash_api": {"external_controller": "0.0.0.0:9095", "external_ui": "/etc/momo/run/ui", "default_mode": "rule"}
+    "cache_file": {
+      "enabled": true,
+      "path": "/etc/momo/run/cache.db",
+      "store_fakeip": true
+    },
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "/etc/momo/run/ui",
+      "default_mode": "rule"
+    }
   },
-  "log": {"level": "error", "timestamp": true}
+  "log": {
+    "level": "error",
+    "timestamp": true
+  }
 }
