@@ -8,51 +8,41 @@
     "servers": [
       {
         "tag": "dns_local",
-        "address": "223.5.5.5",
+        "type": "udp",
+        "server": "223.5.5.5",
         "detour": "🎯 全球直连"
       },
       {
         "tag": "dns_remote",
-        "address": "8.8.8.8",
+        "type": "https",
+        "server": "8.8.8.8",
         "detour": "🚀 节点选择"
       },
       {
         "tag": "dns_fakeip",
-        "address": "fakeip"
+        "type": "fakeip"
       }
     ],
     "rules": [
       {
-        "outbound": "any",
-        "server": "dns_local"
+        "server": "dns_local",
+        "clash_mode": "direct"
       },
       {
-        "clash_mode": "direct",
-        "server": "dns_local"
-      },
-      {
-        "clash_mode": "global",
-        "server": "dns_fakeip"
+        "server": "dns_fakeip",
+        "clash_mode": "global"
       },
       {
         "rule_set": "geosite-cn",
         "server": "dns_local"
       },
       {
-        "rule_set": "geosite-google",
-        "server": "dns_fakeip"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
+        "query_type": ["A", "AAAA"],
         "server": "dns_fakeip",
         "rewrite_ttl": 600
       }
     ],
     "fakeip": {
-      "enabled": true,
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18"
     },
@@ -64,7 +54,9 @@
       "type": "tun",
       "tag": "tun-in",
       "interface_name": "momo",
-      "inet4_address": "172.19.0.1/30",
+      "address": [
+        "172.19.0.1/30"
+      ],
       "auto_route": false,
       "strict_route": false,
       "stack": "system",
@@ -83,105 +75,58 @@
     {
       "tag": "🚀 节点选择",
       "type": "selector",
-      "outbounds": [
-        "♻️ 自动选择",
-        "🇺🇸 美国自动",
-        "🇭🇰 香港自动",
-        "🇯🇵 日本自动",
-        "🎯 全球直连"
-      ]
+      "outbounds": ["♻️ 自动选择", "🇺🇸 美国自动", "🇭🇰 香港自动", "🇯🇵 日本自动", "🎯 全球直连"]
     },
     {
       "tag": "♻️ 自动选择",
       "type": "urltest",
-      "outbounds": [
-        "🇺🇸 美国自动",
-        "🇭🇰 香港自动",
-        "🇯🇵 日本自动"
-      ],
+      "outbounds": ["🇺🇸 美国自动", "🇭🇰 香港自动", "🇯🇵 日本自动"],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 50
+      "interval": "10m"
     },
     {
       "tag": "🇭🇰 香港自动",
       "type": "urltest",
       "outbounds": ["{all}"],
       "filter": [{"action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]}],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 50
+      "url": "http://www.gstatic.com/generate_204"
     },
     {
       "tag": "🇯🇵 日本自动",
       "type": "urltest",
       "outbounds": ["{all}"],
       "filter": [{"action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]}],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 50
+      "url": "http://www.gstatic.com/generate_204"
     },
     {
       "tag": "🇺🇸 美国自动",
       "type": "urltest",
       "outbounds": ["{all}"],
       "filter": [{"action": "include", "keywords": ["🇺🇸|US|us|美国|美|United States"]}],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 50
+      "url": "http://www.gstatic.com/generate_204"
     },
     {
       "tag": "🎯 全球直连",
       "type": "direct"
+    },
+    {
+      "tag": "dns-out",
+      "type": "dns"
     }
   ],
   "route": {
     "rules": [
+      { "protocol": "dns", "outbound": "dns-out" },
+      { "ip_is_private": true, "outbound": "🎯 全球直连" },
+      { "protocol": "bittorrent", "outbound": "🎯 全球直连" },
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "protocol": "dns"
-          },
-          {
-            "port": 53
-          }
-        ],
-        "outbound": "dns-out"
-      },
-      {
-        "ip_is_private": true,
+        "domain_suffix": ["steamserver.net", "steamcontent.com", "steamcdn-a.akamaihd.net"],
         "outbound": "🎯 全球直连"
       },
-      {
-        "protocol": "bittorrent",
-        "outbound": "🎯 全球直连"
-      },
-      {
-        "domain_suffix": [
-          "steamserver.net",
-          "steamcontent.com",
-          "steamcdn-a.akamaihd.net"
-        ],
-        "outbound": "🎯 全球直连"
-      },
-      {
-        "rule_set": "geosite-ai",
-        "outbound": "🇺🇸 美国自动"
-      },
-      {
-        "rule_set": "geosite-google",
-        "outbound": "🇺🇸 美国自动"
-      },
-      {
-        "rule_set": "geosite-cn",
-        "outbound": "🎯 全球直连"
-      },
-      {
-        "rule_set": "geoip-cn",
-        "outbound": "🎯 全球直连"
-      }
+      { "rule_set": "geosite-ai", "outbound": "🇺🇸 美国自动" },
+      { "rule_set": "geosite-google", "outbound": "🇺🇸 美国自动" },
+      { "rule_set": "geosite-cn", "outbound": "🎯 全球直连" },
+      { "rule_set": "geoip-cn", "outbound": "🎯 全球直连" }
     ],
     "rule_set": [
       {
@@ -225,7 +170,6 @@
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/momo/run/ui",
-      "secret": "",
       "default_mode": "rule"
     }
   }
