@@ -4,137 +4,60 @@
     {
       "domain": [
         "localhost",
-        "constant.yonyou.com", 
-        "netease.com", 
-        "163.com",
-        "douyin.com",
-        "time-ios.apple.com",
-        "time1.cloud.tencent.com",
-        "music.163.com",
-        "musicapi.taihe.com",
-        "music.taihe.com",
-        "songsearch.kugou.com",
-        "trackercdn.kugou.com",
-        "api-jooxtt.sanook.com",
-        "api.joox.com",
-        "joox.com",
-        "y.qq.com",
-        "streamoc.music.tc.qq.com",
-        "mobileoc.music.tc.qq.com",
-        "isure.stream.qqmusic.qq.com",
-        "dl.stream.qqmusic.qq.com",
-        "aqqmusic.tc.qq.com",
-        "amobile.music.tc.qq.com",
-        "music.migu.cn",
-        "localhost.ptlogin2.qq.com",
-        "localhost.sec.qq.com",
-        "xnotify.xboxlive.com",
         "proxy.golang.org",
-        "heartbeat.belkin.com",
-        "mesu.apple.com",
-        "swscan.apple.com",
-        "swquery.apple.com",
-        "swdownload.apple.com",
-        "swcdn.apple.com",
-        "swdist.apple.com",
-        "lens.l.google.com",
-        "na.b.g-tun.com",
-        "ff.dorado.sdo.com",
-        "shark007.net",
-        "Mijia Cloud",
-        "adguardteam.github.io",
-        "adrules.top",
-        "anti-ad.net",
-        "local.adguard.org",
-        "static.adtidy.org",
-        "ps.res.netease.com"
-      ]
-    },
-    {
+        "heartbeat.belkin.com"
+      ],
       "domain_suffix": [
-        ".lan",
-        ".localdomain",
-        ".example",
-        ".invalid",
-        ".localhost",
-        ".test",
-        ".local",
-        ".home.arpa",
-        ".direct",
-        ".pool.ntp.org",
-        ".music.163.com",
-        ".126.net",
-        ".kuwo.cn",
-        ".y.qq.com",
-        ".xiami.com",
-        ".music.migu.cn",
-        ".msftconnecttest.com",
-        ".msftncsi.com",
-        ".steamcontent.com",
-        ".srv.nintendo.net",
-        ".cdn.nintendo.net",
-        ".battle.net",
-        ".battlenet.com.cn",
-        ".wotgame.cn",
-        ".wggames.cn",
-        ".wowsgame.cn",
-        ".wargaming.net",
-        ".linksys.com",
-        ".linksyssmartwifi.com",
-        ".router.asus.com",
-        ".nflxvideo.net",
-        ".square-enix.com",
-        ".finalfantasyxiv.com",
-        ".ffxiv.com",
-        ".ff14.sdo.com",
-        ".mcdn.bilivideo.cn",
-        ".media.dssott.com",
-        ".market.xiaomi.com",
-        ".cmbchina.com",
-        ".cmbimg.com",
-        ".sandai.net",
-        ".n0808.com",
-        ".3gppnetwork.org",
-        ".uu.163.com",
-        ".pub.3gppnetwork.org",
-        ".oray.com",
+        // === 游戏类：补齐《燕云十六声》及主流端游 ===
+        ".yysls.cn",           // 燕云十六声官网
+        ".yysls.netease.com",   // 燕云十六声业务
+        ".leihuo.com",          // 雷火工作室
+        ".netease.com",         // 网易通用
+        ".163.com",             // 网易通用
+        ".mihoyo.com",          // 米哈游
+        ".hoyoverse.com",       // 米哈游海外/通用
+        ".starrails.com",       // 崩铁
+        ".gcloudcs.com",        // 腾讯/网易常用游戏服务器
+        ".gcloudsdk.com",       // 游戏SDK
+        ".uu.163.com",          // UU加速器
+
+        // === 支付与安全类：防止Fake-IP导致环境校验失败 ===
+        ".alipay.com",          // 支付宝
+        ".alipayobjects.com",   // 支付宝静态资源
+        ".cmbchina.com",        // 招商银行
+        ".cmbimg.com",          // 招行资源
+        ".unionpay.com",        // 银联
+        ".unionpaysecure.com",  // 银联安全支付
+        ".tenpay.com",          // 微信支付后台
+
+        // === 系统服务类：防止推送延迟与同步错误 ===
+        ".push.apple.com",      // 苹果推送
+        ".time.apple.com",      // 苹果时间同步
+        ".time.windows.com",    // Windows时间同步
+        ".pool.ntp.org",        // 通用NTP池
+        ".snssdk.com",          // 字节跳动SDK
+        ".pstatp.com",          // 字节跳动资源
+
+        // === 常用工具与下载类 ===
+        ".sandai.net",          // 迅雷
+        ".n0808.com",           // 迅雷加速
+        ".oray.com",            // 向日葵/花生壳
         ".orayimg.com",
-        ".gcloudcs.com",
-        ".gcloudsdk.com"
-      ]
-    },
-    {
+        ".xiaomi.com",          // 小米服务
+        ".market.xiaomi.com",
+
+        // === 原有保留项（媒体/其他） ===
+        ".music.163.com",
+        ".kugou.com",
+        ".joox.com",
+        ".qq.com",
+        ".qqmusic.qq.com",
+        ".music.tc.qq.com",
+        ".music.migu.cn"
+      ],
       "domain_regex": [
-        "^time\\.[^.]+\\.com",
-        "^time\\.[^.]+\\.gov",
-        "^time\\.[^.]+\\.edu\\.cn",
-        "^time\\.[^.]+\\.apple\\.com",
-        "^time1\\.[^.]+\\.com",
-        "^time2\\.[^.]+\\.com",
-        "^time3\\.[^.]+\\.com",
-        "^time4\\.[^.]+\\.com",
-        "^time5\\.[^.]+\\.com",
-        "^time6\\.[^.]+\\.com",
-        "^time7\\.[^.]+\\.com",
-        "^ntp\\.[^.]+\\.com",
-        "^ntp1\\.[^.]+\\.com",
-        "^ntp2\\.[^.]+\\.com",
-        "^ntp3\\.[^.]+\\.com",
-        "^ntp4\\.[^.]+\\.com",
-        "^ntp5\\.[^.]+\\.com",
-        "^ntp6\\.[^.]+\\.com",
-        "^ntp7\\.[^.]+\\.com",
-        "^[^.]+\\.time\\.edu\\.cn",
-        "^[^.]+\\.ntp\\.org\\.cn",
-        "^localhost\\.[^.]+\\.weixin\\.qq\\.com",
-        "^[^.]+\\.n\\.n\\.srv\\.nintendo\\.net",
-        "^xbox\\.[^.]+\\.[^.]+\\.microsoft\\.com",
-        "^[^.]+\\.[^.]+\\.xboxlive\\.com",
-        "^xbox\\.[^.]+\\.microsoft\\.com",
-        "^(.+\\.)?stun\\.[^.]+\\.[^.]+$",
-        "^(.+\\.)?stun\\.[^.]+\\.[^.]+\\.[^.]+$",
-        "^(.+\\.)?stun\\.[^.]+\\.[^.]+\\.[^.]+\\.[^.]+$",
-        "^(.+\\.)?stun\\.[^.]+\\.[^.]+\\.[^.]+\\.[^.]+\\.[^.]+$"
+        // 仅保留必要正则，清理了冗余的 NTP 正则
+        "^lp-.*\\.itunes\\.apple\\.com"
       ]
     }
   ]
