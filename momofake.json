@@ -47,7 +47,7 @@
       {"rule_set": "geoip-cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-steamcn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-apple", "outbound": "🎯 全球直连"},
-      {"domain_suffix": ["163.com", "netease.com", "leihuo.com", "douban.com"], "outbound": "🎯 全球直连"},
+      {"domain_suffix": ["163.com", "netease.com", "leihuo.com", "douban.com", "quark.cn"], "outbound": "🎯 全球直连"},
       {"action": "resolve"}
     ],
     "rule_set": [
