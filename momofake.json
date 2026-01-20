@@ -35,9 +35,8 @@
   ],
   "route": {
     "rules": [
-      {"domain_keyword": ["docker", "production.cloudflare.docker.com", "gcr.io", "quay.io", "ghcr.io"],"action": "route", "outbound": "🚀 默认代理" },
+      {"domain_keyword": ["docker", "gcr.io", "quay.io", "ghcr.io"],"action": "route", "outbound": "🚀 默认代理" },
       {"ip_cidr": ["192.168.1.188/32"], "port": [6881], "action": "route", "outbound": "🎯 全球直连"},
-      {"domain_keyword": ["docker", "production.cloudflare.docker.com", "cloudflare", "argotunnel"], "outbound": "🎯 全球直连"},
       {"action": "sniff", "sniffer": ["http", "tls", "dns"]},
       {"inbound": "dns-in", "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
