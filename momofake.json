@@ -67,16 +67,18 @@
     "listen": "::",
     "listen_port": 1053
   },
-  {
-    "tag": "tun-in",
-    "type": "tun",
-    "interface_name": "momo",
-    "inet4_address": "172.19.0.1/30",
-    "auto_route": false,
-    "strict_route": false,
-    "stack": "system", 
-    "sniff": true
-  }
+{
+  "tag": "tun-in",
+  "type": "tun",
+  "interface_name": "momo",
+  "address": [
+    "172.19.0.1/30"  
+  ],
+  "auto_route": false,
+  "strict_route": false,
+  "stack": "system", 
+  "sniff": true
+}
 ],
   "experimental": {
     "cache_file": {
