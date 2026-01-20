@@ -45,6 +45,7 @@
       {"rule_set": "geoip-cn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-steamcn", "outbound": "🎯 全球直连"},
       {"rule_set": "geosite-apple", "outbound": "🎯 全球直连"},
+      {"ip_cidr": ["192.168.1.188/32"], "port": [6881], "action": "route", "outbound": "🎯 全球直连"},
       {"domain_suffix": ["163.com", "netease.com", "leihuo.com"], "outbound": "🎯 全球直连"},
       {"action": "resolve"}
     ],
